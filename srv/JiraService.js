@@ -33,12 +33,4 @@ module.exports = cds.service.impl((srv) => {
 
     return data;
   });
-
-  // srv.on(
-  //   ["CREATE", "POST", "PATCH", "PUT"],
-  //   "TransportDetails",
-  //   async (req) => {
-  //     console.log("");
-  //   }
-  // );
 });
