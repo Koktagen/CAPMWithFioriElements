@@ -23,12 +23,12 @@ module.exports = cds.service.impl((srv) => {
     } else {
       await tx.run(INSERT.into(JiraDetails).entries(req.data));
       let csvData = `\n ${data.ID};${data.JiraNo};${data.jiraDescription};${data.status};${data.release};${data.assignee};${data.reporter}`;
-      await fs.appendFile(dataDir, csvData, (error) => {
-        if (error) {
-          throw error;
-        }
-        console.log("Data saved");
-      });
+      // await fs.appendFile(dataDir, csvData, (error) => {
+      //   if (error) {
+      //     throw error;
+      //   }
+      //   console.log("Data saved");
+      // });
     }
 
     return data;

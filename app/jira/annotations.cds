@@ -66,6 +66,11 @@ annotate jira.JiraDetails with @(
                 $Type : 'UI.ReferenceFacet',
                 Target : 'transport/@UI.LineItem',
                 Label : 'Transport Details',
+            },
+            {
+                $Type : 'UI.ReferenceFacet',
+                Target : 'comment/@UI.LineItem#commenttable',
+                Label : 'Comment Details',
             }
         ]
     }
@@ -90,6 +95,22 @@ annotate jira.TransportDetails with @(
             {
                 Label: 'Released By',
                 Value: releasedBy
+            }
+        ]
+    }
+);
+
+annotate jira.comments with @(
+    UI: {
+        LineItem#commenttable: [
+            {
+                Label: 'Comments',
+                Value: comment
+
+            },
+            {
+                Label: 'Comment Added',
+                Value: commentadded
             }
         ]
     }
