@@ -1,2 +1,2 @@
 
-using from './jira\annotations';
+using from './jira/annotations';
