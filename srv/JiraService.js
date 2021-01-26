@@ -2,10 +2,11 @@ const cds = require("@sap/cds");
 const fs = require("fs");
 const path = require("path");
 
-const { JiraDetails } = cds.entities("sap.cap.jira");
-
 module.exports = cds.service.impl((srv) => {
   srv.on(["POST", "CREATE"], "JiraDetails", async (req) => {
+    const db = await cds.connect.to("db");
+    const { JiraDetails } = db.entities("sap.cap.jira");
+
     console.log(`From Console`);
     const dataDir = path.join(
       __dirname,
